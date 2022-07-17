@@ -1,0 +1,281 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&family=Macondo&family=Oleo+Script+Swash+Caps:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+a{
+    color: none;
+}
+ul li{
+    list-style: none;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Jossef Sans", sans-serif;   
+}
+
+.main .main__singer{
+    width: 45%;
+    height: 100vh;
+    background: url("../img/denvau1.jpeg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-color: var(--primary-color);
+   
+}
+
+.main__singer--item{
+    padding: 40px 50px;
+    width: 100%;
+    height:30px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top:20px
+}
+
+
+.main .main__singer .main__singer--logo img{
+    width:40px;
+    height:40px;
+    object-fit: cover;
+    margin-top: 6px;
+    opacity: 0.8;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.main__singer--list{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:flex-end;
+    
+}
+.main__singer--list i{
+    font-size: 3rem;
+    padding-right: 10px;
+    margin-top:3px;
+    position: relative;
+}
+
+.main__singer--list:hover .singer__list{
+    display: inline-block;
+   margin-top: 50px;
+   margin-right: 18px;
+}
+
+
+.main .main__music{
+    width: 55%;
+    background-color: #f5f3f3;
+    text-align: center;
+}
+
+.main .main__music .title{
+    color: #36332a;
+    margin-top: 70px;
+    font-family: "Oleo Script Swash Caps",sans-serif;
+    font-weight: 400;
+}
+
+.title span{
+    padding: 20px;
+    font-size: 3rem;
+    font-weight:300;
+}
+
+.main .main__music--list { 
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+}
+
+.main .main__music--list .main__music--table{
+    width: 100%;  
+    border-collapse: collapse;
+    margin-top: 50px;
+    overflow-y: scroll;
+}
+
+.main .main__music--list .main__music--table thead{
+    opacity: 0.8;
+    font-family: "Oleo Script Swash Caps",sans-serif;
+    font-weight: 400;
+    max-width:715px;
+    position:fixed;
+}
+
+.main .main__music--list .main__music--table tr{
+    
+    border-bottom: 1px solid #ddd9d6;
+}
+
+.main .main__music--list .main__music--table tbody {
+    max-height:340px;
+    display:block;
+    overflow-y: auto;
+    margin-top:55px;
+    max-width: 730px;
+    
+}
+
+.main .main__music--list .main__music--table tbody tr td{
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.main .main__music--list .main__music--table tr th{
+    text-align: left;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 300;
+    max-width:700px;
+}
+
+.main .main__music--list .main__music--table tr td{
+    text-align: left;
+    border-bottom: 1px solid #ddd9d6;
+    padding: 20px 0px 20px 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    min-width:100px;
+    max-width:650px;
+    animation:fadeIn ease-in 1s;
+    hyphens: auto;
+    align-items:center;
+}
+/* 
+.main .main__music--list .main__music--table tr td:last-child{
+    padding-left: 45px;
+} */
+
+/* .main .main__music--list .main__music--table tr .td__item{
+    animation:fadeIn ease-in 0.3s;
+} */
+.main .main__music--list .main__music--table tr td:nth-child(1){
+    width: 20%;
+    
+}
+
+.main .main__music--list .main__music--table tr td:nth-child(2){
+    width: 15%;
+    padding-left: 42px;
+    text-align: left;
+    /* margin-left: 30px; */
+}
+
+.main .main__music--list .main__music--table tr td:nth-child(3){
+    /* padding-left: 10px; */
+    /* width: 5%; */
+    /* margin-left:5px; */
+    /* text-align: center; */
+}
+
+.main .main__music--list .main__music--table tr .td__item{
+    width: 10%;
+    /* width: 10%; */
+    /* margin-left: 20px; */
+    text-align: center;
+}
+
+
+.main .main__music--list .main__music--table tr th:nth-child(1){
+    width: 30%;
+}
+
+.main .main__music--list .main__music--table tr th:nth-child(2){
+    width: 20%;
+
+}
+
+.main .main__music--list .main__music--table tr th:nth-child(3){
+    width: 15%;
+}
+
+.main .main__music--list .main__music--table tr th:last-child{
+    width: 11%;
+}
+
+.music__btn{
+    margin-top: 50px;
+   
+}
+
+.music__btn .btn__go{
+    padding: 10px 30px;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    background-color: #C89F7D;
+    border-color: #C89F7D;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Oleo Script Swash Caps",sans-serif;
+    transition: 0.7s;
+}
+
+.music__btn .btn__go:hover{
+    background-color: transparent;
+    color: #36332a;
+    border: 1px solid #C89F7D;
+}
+
+
+
+.singer__list{
+    list-style: none;
+    width:120px;
+    height:auto;
+    background-color: transparent !important;
+    /* display: none; */
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Roboto",sans-serif;
+    position:absolute;
+    display: none;
+    border: 1px solid rgba(99, 96, 96, 0.5);
+    border-radius: 5px;
+    animation: fadeIn ease-in 0.3s;
+    
+}
+.singer__list::after{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left:0;
+    width: 100%;
+    height:30px;
+    
+}
+
+.singer__list .singer__list--item{
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.active-music{
+    color: red;
+}

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&family=Macondo&family=Oleo+Script+Swash+Caps:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #ffffff;
+    font-size:16px;
+    font-family: "Roboto", sans-serif;
+    /* background-color: rgba(0,0,0,0.5); */
+}
+
+.modal-container{
+    min-width: 100%;
+    display:none; 
+    position: relative;
+    color:  black;
+}
+
+
+.content_music {
+    width: 45%;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    background-color: rgba(255, 255, 255,0.5);
+    display: flex;
+    align-items: center;
+    text-align: center;
+} 
+
+.content_music .song {
+    display: flex;
+    width: 300px;
+    margin-left: 20px;
+    white-space: nowrap;
+overflow: hidden;
+}
+
+.content_music .img__playing{
+    width: 90px;
+    height:90px;
+}
+.content_music .img__playing img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.content_music .song .content__singer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 10px;
+    text-align:left;
+}
+.content_music .song .content__singer span{
+    margin-top: 10px;
+    text-overflow: ellipsis;
+}
+
+.content_music .progress{
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #e9e3e3;
+    outline: none;
+    opacity: 0.9;
+    margin-top: 20px;
+    appearance: none;
+    margin-left: 30px;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: red;
+    cursor: pointer;
+  }
+
+.content_music .playing__music{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.content_music .playing__music .playing_item{
+    display:flex;
+    
+}
+
+.content_music .playing__music .playing_item li{
+    margin-left: 30px;
+    
+}
+
+.active{
+    color: red;
+}
