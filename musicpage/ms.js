@@ -1,6 +1,6 @@
 const musicApi = 'https://music-api.000webhostapp.com';
 const denvauapi = 'https://music-api.000webhostapp.com/api/music/showDV.php';
-const userApi = 'https://music-api.000webhostapp.com/api/music/login.php'
+const userApi = 'http://localhost/myskil/reshful-api/api/music/login.php'
 
 var hoverList = document.querySelector('.hover-list');
 var singerList = document.querySelector('.singer__list');
@@ -44,8 +44,8 @@ const cdThumbAnimate = imgplay.animate([
 
 
 
- async function renderMusicofSinger(idSinger) {
-   await fetch('https://music-api.000webhostapp.com/api/music/showMr.php?id=' + idSinger)
+  function renderMusicofSinger(idSinger) {
+    fetch('https://music-api.000webhostapp.com/api/music/showMr.php?id=' + idSinger)
      .then(res => res.json())
     .then(data => {
         
@@ -75,47 +75,10 @@ const app = {
     isRandom: false,
 
    
-    checklogin :function() {
-        const username = email.value;
-        const password = pwd.value;
-        btnLogin.onclick = function() {
-            fetch(userApi, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(username,password),
-            })
-            .then((response) => response.json())
-            //Then with the data from the response in JSON...
-            .then((data) => {
-                if(email.value == ''){
-                    alert("Please enter email")
-                }else if(pwd.value == ''){
-                    alert("Please enter password")
-                }else if(email.value != 'lam@gmail.com'){
-                    alert("Email does not exit")
-                }else if(pwd.value != '123456'){
-                    alert("Password incorrect")
-                }
-                else{
-                    alert('Success:' + email.value);
-                avt.src = '../img/avtmeo.jpeg';
-                modalCard.style.zIndex = -1;
-                console.log(data.user.user_img)
-                cardSing.style.display = 'none';
-                form.reset();
-                }
-            })
-            //Then with the error genereted...
-            .catch((error) => {
-                alert('Error: ' + error.message)
-            });
-        }
-    },
+    
     playRandom: function() {
         const idnow = this.currentSong.singer_id;
-        fetch('https://music-api.000webhostapp.com/api/music/showMr.php?id=' + idnow)
+        fetch('https://music-api.000webhostapp.com/myskil/reshful-api/api/music/showMr.php?id=' + idnow)
         .then(res => res.json())
         .then(data => {
             const st = Number($('tbody tr').dataset.index);
@@ -256,7 +219,7 @@ const app = {
             const checked = _this.currentSong.singer_id;
             
             console.log(_this.currentIndex)
-            fetch('https://music-api.000webhostapp.com/api/music/showMr.php?id=' + checked)
+            fetch('https://music-api.000webhostapp.com/myskil/reshful-api/api/music/showMr.php?id=' + checked)
             .then(res => res.json())
             .then(data => {
                 _this.currentIndex--;
@@ -342,16 +305,14 @@ const app = {
             var seekTime = audio.duration / 100 * e.target.value;
             audio.currentTime = seekTime;
         }
-        avt.onclick = function(){
-            modalCard.style.zIndex = 2;
-        }
+        
         
     },
     checktitle : function() {
         title.innerText = this.currentSong.name_singer;
     },
     rengerSG: function(){
-        fetch('https://music-api.000webhostapp.com/api/music/singerlist.php')
+        fetch('http://localhost/music-api/api/music/singerlist.php')
         .then(res => res.json())
         .then(sg => {
             var sginner = sg.singer.map((sing)=>{
@@ -368,7 +329,6 @@ const app = {
         this.getMusic();
         this.defineProperties();
         this.rengerSG();
-        this.checklogin();
         
     }
 }
@@ -376,6 +336,10 @@ const app = {
 app.start();
 
 
+
+
+        
+    
 
 
         
