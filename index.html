@@ -4,55 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/base.css">
+    <title>Music</title>
+    <link rel="stylesheet" href="./css/music.css">
+    <link rel="stylesheet" href="./css/playsong.css">
+    <link rel="stylesheet" href="./musicpage/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+
 </head>
 <body>
-    <nav>
-        <div class="main__color">
-            <ul class="main_color-list">
-                <li>Choose your favorite color</li>
-                <li class="btn__blue"></li>
-                <li class="btn__org"></li>
-                <li class="btn__red"></li>
-            </ul>
-            <div class="mode__web">
-                <i class="moon__color fas fa-moon"></i>
-            </div>
-        </div>
-    </nav>
-    <div class="content">
-        <ul class="content__list">
-            <li class="content__list--item tab-item">
-                <a href="./musicpage/index.html"><i class=" fa fa-home "></i></a>
-            </li>
-            <li class="content__list--item tab-item">
-                <i class=" fas fa-info "></i>
-            </li>
-            <li class="content__list--item tab-item">
-                <i class=" fas fa-user-graduate "></i>
-            </li>
-            <li class="content__list--item tab-item">
-                <i class="fas fa-book-open"></i>
-            </li>
-        </ul>
+    
+    <div class="main">
+        <div class="main__singer">
+            <div class="main__singer--item">            
+                <div class="main__singer--logo">
+                    
+                </div>
+                <div class="main__singer--list ">
+                    <i class='bx bx-list-ul'></i>
+                    <ul class="singer__list">
 
-        <div class="site-man">
-            <h3 class="title-text">Hey</h3>
-            <h1 class="title-text text-uppercase">I am Lam</h1>
-            <h4 class="title-text text-uppercase">Junior Wordpress Developer</h4>
-            <p class="title-content">
-                Welcome to website. 
-            </p>
+                    </ul>
+                </div>
+                
+            </div>
+            
         </div>
         
+        <div class="main__music">
+            <div class="title">
+                <span>Playlist</span>
+            </div>
+            <div class="main__music--list">
+                <table class='main__music--table' id="tbl_music">
+                    <thead>
+                        <tr>
+                            <th>Name of the song</th>
+                            <th>Singer</th>
+                            <th>Play</th>
+                            <th>Add list</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-index="">
+                            <td class="nameSong"></td>
+                            <td class="nameSinger"></td>
+                            <td class="td__item"><i class="bx bxs-right-arrow"></i></td>
+                            <td class="td__item"><i class="bx bx-plus"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="music__btn">
+                <a href="" class="btn__go">go to list</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container">
+        <div class="modal" id="#modal">
+            <div class="content_music">
+                            <div class="song">
+                                <div class="img__playing">
+                                    <img  src="./img/denvau1.jpeg" alt="">
+                                </div>
+                                <div class="content__singer">
+                                    <span class="name__song"></span>
+                                    <span class="name__singer"></span>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="playing__music">
+                                <ul class="playing_item">
+                                    <li class="playing_item--list"><i class="fa fa-redo"></i></li>
+                                    <li class="playing_item--list"><i class="fa fa-step-backward"></i></li>
+                                    <li class="playing_item--list"><i class="fa pplaying fa-play" ></i></li>
+                                    <li class="playing_item--list"><i class="fa fa-step-forward" id="next"></i></li>
+                                    <li class="playing_item--list"><i class="fa fa-random"></i></li>
+                                </ul>
+                                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                                <audio id="audio" preload="true"  class="audio" src="../aud/AnhDechCanGiNhieuNgoaiEm-DenVuThanhDong-5749937.mp3"></audio>
+                            </div>         
+            </div>
+        </div>
     </div>
 
-    <script  src="./js/app.js"></script>
+    <!-- <div class="login__card"> -->
+       
+
+       
+    <!-- </div> -->
+    <script type="text/javascript" src="./musicpage/signup.js">    
+    </script>
+    <script type="text/javascript" src="./musicpage/validator.js"></script> 
+    <script>
+         Validator({
+            form:'#register-form',
+            errorSelector:'.form-message',
+            formGroupSelector:'.form-group',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isEmail('#email'), 
+                Validator.minLength('#password',6)    
+            ],
+            onSubmit: function(data){
+                console.log(data);
+            }
+        });
+    </script>
+<script src="./musicpage/ms.js"></script>
+<script src="./js/app.js"></script>
+
+
 </body>
 </html>
